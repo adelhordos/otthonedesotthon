@@ -1,0 +1,48 @@
+<app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+<div *ngFor="let house of houses" class="house-card">
+<mat-card *ngIf="searchText ==='' || house.location.toLowerCase().includes(searchText)">
+  <div class="row" >
+    <div class="column">
+      <div class="image-column">
+        <img [src]="house.photoUrl">
+      </div>
+    </div>
+    <div class="column m-auto">
+      <mat-card-content>
+        <h1 mat-card-title>{{house.type}}</h1>
+        <span class="d-flex details">
+          <p><mat-icon>location_on</mat-icon>&nbsp;{{house.location}}</p>
+          <p *ngIf="house.isRent"><mat-icon>house</mat-icon>&nbsp;Eladó</p>
+          <p *ngIf="!house.isRent"><mat-icon>house</mat-icon>&nbsp;Kiadó</p>
+        </span>
+        <div class="price">
+          <p>{{house.price | formatNumber}} Ft</p>
+        </div>
+        <button mat-raised-button color="primary" (click)="rateDialog(house.id)">Értékelés</button>
+      </mat-card-content>
+    </div>
+    <div class="column">
+      <table>
+        <tr>
+          <th>Felhasználó</th>
+          <th>Értékelés</th>
+          <th>Szerkesztés</th>
+          <th>Törlés</th>
+        </tr>
+        <ng-container *ngIf="rates.has(house.id)">
+          <ng-container *ngFor="let rate of rates.get(house.id); let i = index;">
+            <tr [ngStyle]="i % 2 === 1 ? {'background-color': '#ffffff'} : {'background-color': '#cdefb8'}">
+              <td>{{ rate.username }}</td>
+              <td>{{ rate.rate }}</td>
+              <td><button mat-button (click)="editDialog(rate.id, rate.houseId!)">Szerkesztés</button></td>
+              <td><button mat-button (click)="deleteThisRate(rate.id)">Törlés</button></td>
+            </tr>
+          </ng-container>
+        </ng-container>
+      </table>
+    </div>
+  </div>
+</mat-card>
+</div>
+
+

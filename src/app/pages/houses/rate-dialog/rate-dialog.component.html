@@ -1,0 +1,26 @@
+<div class="dialog">
+  <form [formGroup]="ratesForm" (ngSubmit)="addRate()">
+    <h1>Új értékelés</h1>
+    <div class="form-field">
+      <mat-form-field>
+        <input matInput type="text" formControlName="username" placeholder="Felhasználó">
+        <mat-label>Felhasználó:</mat-label>
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-select formControlName="rate" placeholder="Értékelés">
+          <mat-option value="1">1</mat-option>
+          <mat-option value="2">2</mat-option>
+          <mat-option value="3">3</mat-option>
+          <mat-option value="4">4</mat-option>
+          <mat-option value="5">5</mat-option>
+        </mat-select>
+        <mat-label>Értékelés:</mat-label>
+      </mat-form-field>
+    </div>
+    <div class="button-container">
+      <button mat-raised-button color="primary" type="submit">Hozzáadás</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+<span class="searchbar">
+  <form class="row">
+    <div class="text-align-center search">Melyik településen keresel? Írd ide!</div>
+    <div class="col-12 where">
+      <input type="text" name="location" class="col-9" placeholder="Település/Városrész" [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()">
+    </div>
+  </form>
+</span>

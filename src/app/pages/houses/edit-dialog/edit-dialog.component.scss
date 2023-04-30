@@ -1,0 +1,30 @@
+.dialog {
+  width: 800px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-field {
+  width: 600px;
+  margin-bottom: 20px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-label {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.mat-select {
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}

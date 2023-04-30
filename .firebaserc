@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "otthonedesotthon-a8590": {
+      "hosting": {
+        "otthonedesotthon": [
+          "otthonedesotthon-a8590"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "otthonedesotthon-a8590"
+  }
+}

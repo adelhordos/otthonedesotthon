@@ -1,0 +1,73 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened="isExpanded" class="d-md-none">
+    <mat-nav-list>
+      <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
+        </mat-icon>
+      </mat-list-item>
+      <mat-list-item *ngIf="!(loggedInUser)" [routerLink]="'login'">
+        <mat-icon mat-list-icon>login</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">Bejelentkezés</span>
+      </mat-list-item>
+      <mat-list-item *ngIf="loggedInUser" [routerLink]="'login'">
+        <mat-icon mat-list-icon>logout</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item" (click)="logout()">Kijelentkezés</span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'signup'">
+        <mat-icon mat-list-icon>app_registration</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">Regisztráció</span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'houses'">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">Ingatlanok</span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'new-house'">
+        <mat-icon mat-list-icon>create</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">Hirdetés feladás</span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'contact'">
+        <mat-icon mat-list-icon>contact_support</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">Kapcsolat</span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'/home'">
+        <mat-icon mat-list-icon>backspace</mat-icon>
+        <span *ngIf="isExpanded" class="menu-item">Főoldal</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Content - rendered Content for the current router path into the <router-outlet>, e.g. /dashboard or /info-->
+  <mat-sidenav-content>
+    <mat-toolbar  class="d-none d-md-flex">
+      <img src="assets/logo.png">
+    <div class="menu">
+      <div class="new-house">
+        <a mat-raised-button color="accent" [routerLink]="['new-house']"><mat-icon class="homeicon">home</mat-icon>
+          Hirdetés feladása</a>
+      </div>
+      <div class="menuitems">
+        <div class="spacer"></div>
+        <span class="login">
+          <a mat-button *ngIf="!(loggedInUser)" [routerLink]="['login']">Bejelentkezés</a>
+        </span>
+        <span class="logout">
+          <a mat-button *ngIf="loggedInUser" [routerLink]="['login']" (click)="logout()">Kijelentkezés</a>
+        </span>
+        <span class="signup">
+          <a mat-button  [routerLink]="['signup']">Regisztráció</a>
+        </span>
+        <span class="signup">
+          <a mat-button  [routerLink]="['houses']">Ingatlanok</a>
+        </span>
+        <span class="signup">
+          <a mat-button  [routerLink]="['contact']">Kapcsolat</a>
+        </span>
+        <span class="home">
+          <a mat-raised-button color="primary" [routerLink]="['/home']">Főoldal</a>
+        </span>
+      </div>
+    </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

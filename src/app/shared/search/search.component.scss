@@ -1,0 +1,43 @@
+.searchbar{
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  height: auto;
+  background: #cdefb8;
+  color: black;
+  border-radius: 0px 0px 10px 10px;
+  border: 1px solid black;
+  box-shadow: inset 0px -2px rgba(0 0 0.25);
+  form {
+    margin: auto;
+    span {
+      display: flex;
+      min-width: 100px;
+    }
+    div {
+      display: flex;
+      justify-content: center;
+      height:auto;
+      margin-bottom: 10px;
+    }
+    .search{
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+      padding: 20px;
+    }
+    .where{
+      padding-right: 3px;
+      padding-left: 3px;
+      height: 40px;
+      margin-bottom: 20px;
+    }
+    .d-flex{
+      justify-content: center;
+    }
+  }
+}

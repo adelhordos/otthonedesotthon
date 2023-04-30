@@ -1,0 +1,53 @@
+<span class="loading-indicator" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</span>
+<div class="new-house-page">
+  <div class="container">
+    <div class="new-house-form">
+<form [formGroup]="newHouseForm" (ngSubmit)="onSubmit()">
+  <h2>Új ingatlan felvitele</h2>
+  <div class="form-group">
+    <div class="row">
+      <div class="d-flex justify-content-center">
+        <mat-radio-group class="d-flex" formControlName="isRent" (change)="onChange($event)">
+          <span>
+          <mat-radio-button checked [value]=true>Eladó</mat-radio-button>
+            </span>
+          <span>
+          <mat-radio-button [value]=false>Kiadó</mat-radio-button>
+          </span>
+        </mat-radio-group>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 mb-2 type">
+    <mat-label>Típus:</mat-label>
+    <mat-form-field>
+      <mat-select [(value)]="selected" formControlName="type">
+        <mat-option>-- Válasszon --</mat-option>
+        <mat-option value="Lakás">Lakás</mat-option>
+        <mat-option value="Ház">Ház</mat-option>
+        <mat-option value="Iroda">Iroda</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <mat-form-field>
+    <mat-label for="location">Város: </mat-label>
+    <input matInput type="text" formControlName="location" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label for="price">Ár (Ft) </mat-label>
+    <input matInput type="text" formControlName="price" />
+  </mat-form-field>
+  <mat-label for="photo">Fotó feltöltése: </mat-label>
+  <div class="d-flex justify-content-center file">
+    <input type="file" id="myFile" name="filename" (change)="selectFile($event)">
+  </div>
+
+  <div class="submitbutton">
+    <button type="submit">Hirdetés feladása</button>
+  </div>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,97 @@
+.login-page{
+  background-image: url('../../../assets/houses_login.jpg');
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.submitbutton{
+  button {
+    background-color: #cdefb8 ;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 0.2rem;
+    border: none;
+    color: black;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #4CAF50;
+    }
+  }
+}
+.login-form {
+  width: 50%;
+  height: 650px;
+  padding: 40px;
+  background-color: #f2f2f2;
+  border-radius:  10px 0px 0px 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: bolder;
+    background: #cdefb8;
+  }
+
+  mat-form-field {
+    display: flex;
+    flex-direction: column;
+
+    mat-label {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+
+    }
+
+    input {
+      padding: 10px 0px 10px 0px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      width: 100%;
+      border: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.register-link {
+  height: 650px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #cdefb8;
+  border-radius: 0px 10px 10px 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
