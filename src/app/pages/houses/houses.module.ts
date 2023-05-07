@@ -14,7 +14,6 @@ import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -27,7 +26,7 @@ import {MatInputModule} from "@angular/material/input";
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
   ],
   declarations: [HousesComponent, FormatNumberPipe, EditDialogComponent],
   exports: [

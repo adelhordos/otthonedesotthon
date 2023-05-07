@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {House} from "../../shared/models/House";
 import {HouseService} from "../../shared/services/house.service";
 import {getStorage, ref, uploadBytesResumable, getDownloadURL} from "@angular/fire/storage";
@@ -20,7 +20,7 @@ export class NewHouseComponent implements OnInit {
     location: new FormControl(''),
     price: new FormControl(0),
     type: new FormControl(this.selected),
-    photo: new FormControl('')
+    photo: new FormControl('',Validators.required)
   });
   storage = getStorage();
   metadata = {
@@ -60,6 +60,9 @@ export class NewHouseComponent implements OnInit {
               this.loading=false;
             });
           }
+        else{
+          console.log('Képet kötelező feltölteni! Figyelem, a CRUD művelet nem itt van megvalósítva!')
+        }
       }
     );
   }

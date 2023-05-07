@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       try {
         const cred = await this.authService.login(email, password);
         console.log(cred);
-        this.router.navigateByUrl('/menu/houses');
+        await this.router.navigateByUrl('/menu/houses');
       } catch (error) {
         console.log(error);
       } finally {
